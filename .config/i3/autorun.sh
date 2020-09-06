@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function run {
-  if (command -v $1 && ! pgrep $1); then
+	if (command -v $1 && ! pgrep $1); then
     $@&
   fi
 }
@@ -20,5 +20,6 @@ run nitrogen --restore
 #run fromscratch
 run numlockx
 
-run compton --shadow-exclude '!focused'
+run picom
+run dunst
 run volumeicon
