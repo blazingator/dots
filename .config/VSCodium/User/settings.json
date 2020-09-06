@@ -1,0 +1,23 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Nord",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.tabSizing": "shrink",
+    "editor.wordWrap": "on",
+    "window.zoomLevel": -1,
+    "editor.fontFamily": "'Fira Code', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+    "terminal.integrated.rendererType": "dom",
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true
+    },
+    "emmet.syntaxProfiles": { "javascript": "jsx" },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 2,
+    "csharp.suppressDotnetInstallWarning": true
+}

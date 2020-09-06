@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Bandwich
+Type=Application
+Comment=Show bandwith usage
+Comment[pt_BR]=Mostra uso da rede
+Terminal=false
+StartupNotify=true
+Exec=/usr/bin/termite -e bandwhich
+Icon=applications-utilities
+Categories=ConsoleOnly;System;
+GenericName=Bandwith monitoring tool
+GenericName[pt_BR]=Monitor de rede
+Keywords=system;process;network

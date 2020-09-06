@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Stacer
+Comment=Linux Optimizing tool
+GenericName=System Optmizing tool
+Exec=stacer
+Icon=stacer
+Type=Application
+StartupNotify=true
+StartupWMClass=Stacer
+Categories=System;
+Keywords=stacer;optmizing;system
+Terminal=false

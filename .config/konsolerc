@@ -1,0 +1,18 @@
+[Desktop Entry]
+DefaultProfile=Perfil 1.profile
+
+[DownloadDialog Settings]
+Height 768=473
+Width 1360=700
+
+[Favorite Profiles]
+Favorites=Perfil 1.profile
+
+[KonsoleWindow]
+SaveGeometryOnExit=false
+ShowWindowTitleOnTitleBar=true
+
+[MainWindow]
+State=AAAA/wAAAAD9AAAAAAAABVAAAAKVAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Window-Maximized 768x1360=true
