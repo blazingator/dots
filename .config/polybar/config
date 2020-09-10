@@ -60,7 +60,7 @@ module-margin-right = 2
 
 modules-left = apps i3 
 modules-center = xwindow
-modules-right = memory cpu eth date rofi-powermenu
+modules-right = fav-apps memory cpu eth date rofi-powermenu
 
 tray-position = right
 tray-padding = 2
@@ -93,6 +93,8 @@ line-color = #f00
 border-size = 4
 border-color = #00000000
 
+fixed-center = false
+
 padding-left = 0
 padding-right = 2
 
@@ -112,7 +114,7 @@ tray-position = right
 tray-padding = 2
 
 modules-left = apps ewmh xwindow
-modules-center = 
+modules-center = fav-apps
 modules-right = memory cpu eth date rofi-powermenu
 
 [bar/apps-launcher-bar]
@@ -150,7 +152,7 @@ font-1 = "NotoSansMono Nerd Font:pixelsize=10;1"
 font-2 = "fontawesome-regular:pixelsize=10;1"
 font-3 = "MaterialIcons-Regular:pixelsize=10;1"
 font-4 = "Noto Sans Symbols:pixelsize=10;1"
-font-5 = "Symbola:pixelsize=10;1"
+font-5 = "Symbols Nerd Font:pixelsize=10;1"
 
 cursor-click = pointer
 
