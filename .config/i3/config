@@ -186,11 +186,11 @@ for_window [class="(?i)^.*pick"] floating enable
 for_window [class="^.*"] border pixel 0
 for_window [class="^firefox"] border pixel 0
 gaps inner 10
-gaps outer 0
+gaps outer 3
 
 border_radius 10
 #smart_borders on
-hide_edge_borders on
+hide_edge_borders vertical
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #3D42A1 #5050c0 #ffffff #7e7dff   #5050c0
