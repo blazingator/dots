@@ -1,0 +1,16 @@
+configuration {
+  font: "Noto Sans Mono 12"; 
+  location: 1;
+  xoffset: 12;
+  yoffset: 35;
+  show-icons: true;
+  modi: "window,run,drun";
+  display-run: "";
+  display-drun: "";
+  display-window: "";
+  sidebar-mode: true;
+  hide-scrollbar: true;
+  line: 12;
+  columns: 1;
+  theme: "/home/vinicius/.config/rofi/mainmenu.rasi";
+}

@@ -8,11 +8,11 @@ term=""
 sysmon=""
 vim=""
 fm=""
-conf=""
+conf=""
 i3="i3"
 polybar="polybar"
 
-options="$firefox\n$term\n$sysmon\n$vim\n$fm"
+options="$firefox\n$term\n$sysmon\n$vim\n$fm\n$conf"
 
 chosen="$(echo -e "$options" | $rofi_cmd -p "Apps" -dmenu)"
 case $chosen in
@@ -31,7 +31,7 @@ case $chosen in
   $fm)
     thunar &
     ;;
- # $conf)
-  #   lxterminal -e nvim --cmd NERDTree ~/.config
-  #   ;;
+ $conf)
+    lxterminal -e nvim --cmd NERDTree ~/.config &
+    ;;
 esac

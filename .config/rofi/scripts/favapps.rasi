@@ -1,28 +1,38 @@
-* {
-  icon-font: "NotoSansMono Nerd Font 22";
+configuration{
+  font: "NotoSansMono Nerd Font 22";
+}
 
-  background-color: #333344;
+* {
+  bg: #333344;
+  xbg: #33334400;
+  bg-alt: #444;
+  fg: #f5f5f5;
+  bd: #954eff;
 }
 
 #window{
   location: north;
   anchor: north;
   border: 2px;
+  background-color: @bg;
   /* border-radius: 10px; */
-  border-color: #954eff;
-  width: 380;
-  height: 52px;
+  border-color: @bd;
+  width: 26.8%;
+  height: 63px;
   x-offset: 10%;
   y-offset: 5%;
 }
 
 #horibox{
   children: [ listview ];
+  background-color: @xbg;
   /* padding: 10 0 0 0; */
 }
 
 #listview{
   layout: horizontal;
+  spacing: 4px;
+  background-color: @xbg;
 }
 
 #window{
@@ -35,12 +45,12 @@
 }
 
 #element{
-  font: @icon-font;
-  text-color: #fff;
-  padding: 0px 5px 0px 5px;
-  margin: 0 10px 0 0;
-  background-color: #444;
+  padding: 5 15 5 -10;
+  /* margin: 0 5; */
+  text-color: @fg;
+  background-color: @xbg;
 }
+
 #element.selected.normal{
   background-color: #954eff;
 }
