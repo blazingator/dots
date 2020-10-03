@@ -1,1 +1,2 @@
-colorscheme dracula
+colorscheme tokyonight
+
