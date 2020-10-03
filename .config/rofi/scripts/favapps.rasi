@@ -15,11 +15,11 @@ configuration{
   anchor: north;
   border: 2px;
   background-color: @bg;
-  /* border-radius: 10px; */
+  border-radius: 15px;
   border-color: @bd;
   width: 26.8%;
   height: 63px;
-  x-offset: 10%;
+  /* x-offset: 5%; */
   y-offset: 5%;
 }
 

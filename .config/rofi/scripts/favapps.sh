@@ -32,6 +32,6 @@ case $chosen in
     thunar &
     ;;
  $conf)
-    lxterminal -e nvim --cmd NERDTree ~/.config &
+    lxterminal --working-directory="$HOME/.config" -e nvim +"CocCommand explorer" &
     ;;
 esac
