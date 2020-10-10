@@ -1,25 +1,20 @@
+@import "../colors.rasi"
 
-* {
+*{
   icon-font: "NotoSansMono Nerd Font 22";
-
-  bg: #333344;
-  xbg: #33334400;
-  bg-alt: #444;
-  fg: #f5f5f5;
-  bd: #954eff;
 }
 
 #window{
-  location: north;
-  anchor: north;
+  location: east;
+  anchor: east;
   border: 2px;
   border-radius: 15px;
   border-color: @bd;
   background-color: @bg;
   width: 6%;
   height: 27%;
-  x-offset: 44.3%;
-  y-offset: 5%;
+  x-offset: -2;
+  y-offset: 20;
 }
 
 #horibox{
@@ -40,7 +35,6 @@
   enabled: false;
 }
 
-
 #element {
   font: @icon-font; 
   text-color: @fg;
@@ -48,5 +42,6 @@
   padding: 15 0 10 12;
 }
 #element.selected.normal{
-  background-color: #954eff;
+  background-color: @bd;
+  text-color: @fg-alt;
 }

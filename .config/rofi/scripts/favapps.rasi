@@ -1,13 +1,7 @@
-configuration{
-  font: "NotoSansMono Nerd Font 22";
-}
+@import "../colors.rasi"
 
-* {
-  bg: #333344;
-  xbg: #33334400;
-  bg-alt: #444;
-  fg: #f5f5f5;
-  bd: #954eff;
+*{
+  icon-font: "NotoSansMono Nerd Font 22";
 }
 
 #window{
@@ -21,6 +15,7 @@ configuration{
   height: 63px;
   /* x-offset: 5%; */
   y-offset: 5%;
+  font: @icon-font;
 }
 
 #horibox{
@@ -53,4 +48,5 @@ configuration{
 
 #element.selected.normal{
   background-color: #954eff;
+  text-color: @fg-alt;
 }

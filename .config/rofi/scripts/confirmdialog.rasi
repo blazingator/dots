@@ -1,0 +1,53 @@
+@import "../colors.rasi"
+
+#window{
+  location: center;
+  width: 475;
+  height: 25%;
+  background-color: @bg;
+}
+
+#horibox{
+  background-color: @xbg;
+  children: [ listview ];
+}
+
+#listview{
+  layout: horizontal;
+  background-color: inherit;
+  padding: 50 0 0 118;
+}
+
+#window{
+  padding: 4px;
+  children: [ inputbar, horibox ];
+}
+
+#inputbar{
+  background-color: inherit;
+}
+#prompt{
+  background-color: inherit;
+  border-color: @bd;
+  border: 0 0 3 0;
+  text-color: @fg;
+  margin: 10 0 0 118;
+  font: @icon-font;
+}
+#entry{
+  enabled: false;
+}
+#case-indicator{
+  enabled: false;
+}
+
+#element{
+  /*font: @icon-font;*/
+  text-color: @fg;
+  background-color: inherit;
+  padding: 5 10 9 -5;
+  margin: 0 90 0 0;
+}
+#element.selected.normal{
+  background-color: @bd;
+}

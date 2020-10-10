@@ -19,7 +19,7 @@
 - Ricing for [AwesomeWM](https://awesomewm.org) with [awesome-copycats](https://github.com/lcpz/awesome-copycats) preset
 - Ricing for [HerbstlufWM](https://herbstluftwm.org)
 
-- [Wallpaper](https://www.pling.com/p/1336811/)
+- [Wallpaper](https://wallhaven.cc/w/kwp6r1)
 
 ---
 
@@ -27,11 +27,4 @@
 
 ![screenshot1][shot1]
 
-![screenshot2][shot2]
-
-![screenshot3][shot3]
-
-[shot1]: https://github.com/noobdojs/dots/blob/master/shot1.png
-[shot2]: https://github.com/noobdojs/dots/blob/master/shot2.png
-[shot3]: https://github.com/noobdojs/dots/blob/master/shot3.png
-
+[shot1]: https://github.com/noobdojs/dots/blob/master/newshot.png

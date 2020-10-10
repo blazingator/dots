@@ -1,3 +1,5 @@
+; vi:ft=dosini
+
 ;==========================================================
 ;
 ;
@@ -16,26 +18,43 @@
 ;
 ;==========================================================
 
+
+
 [system/base]
 include-file = $HOME/.config/polybar/modules.conf
 
 [colors]
+; Layan Colorscheme ==
 ;background = ${xrdb:color0:#222}
-background = #334
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #8e9aaf
+; background = #333344
+; background-alt = #445
+; foreground = #dfdfdf
+;foreground-alt = #8e9aaf
+; foreground-alt = #a1b7cd
+; primary = #954eff
+; secondary = #e60053
+; alert = #cf2d49
+ blue = #0a6cf5
+; green = #04e762
+ red = #e32e55
+; cyan = #4bffdc
+
+; Layan light Colorscheme ==
+background-alt = #e3f4fb
+background = #eff9f9
+foreground = #222
+foreground-alt = #2d2d2d
+alert = #ff3967
 primary = #954eff
 secondary = #e60053
-alert = #bd2c40
+green = #16ca52
+cyan = #27d3b2 
 
 [bar/i3-bar]
 inherit = section/base-style
 width = 100%
 height = 27
-;offset-x = 1%
-;offset-y = 1%
+
 radius = 6.0
 fixed-center = false
 
@@ -81,11 +100,9 @@ wm-restack = i3
 cursor-scroll = ns-resize
 
 [bar/herbst-bar]
+inherit = section/base-style
 width = 100%
 height = 27
-
-background = ${colors.background}
-foreground = ${colors.foreground}
 
 line-size = 3
 line-color = #f00
@@ -101,33 +118,12 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "DejaVuSans-Condensed:pixelsize=10;1"
-font-1 = "NotoSansMono Nerd Font:pixelsize=10;1"
-font-2 = "fontawesome-regular:pixelsize=10;1"
-font-3 = "MaterialIcons-Regular:pixelsize=10;1"
-font-4 = "Noto Sans Symbols:pixelsize=10;1"
-font-5 = "Symbola:pixelsize=10;1"
-
-cursor-click = pointer
-
 tray-position = right
 tray-padding = 2
 
-modules-left = apps ewmh xwindow
-modules-center = fav-apps
-modules-right = memory cpu eth date rofi-powermenu
-
-[bar/apps-launcher-bar]
-inherit = section/base-style
-width = 200
-height = 25
-
-bottom = true
-
-module-margin-right = 1
-module-maring-left = 2
-
-modules-left = term-launcher vim-launcher browser-launcher pytop-launcher thunar-launcher
+modules-left = apps ewmh
+modules-center = xwindow
+modules-right = fav-apps memory cpu eth date rofi-powermenu
 
 [bar/systray-bar]
 inherit = section/base-style
@@ -170,5 +166,3 @@ screenchange-reload = true
 [global/wm]
 margin-top = 5
 margin-bottom = 5
-
-; vim:ft=dosini

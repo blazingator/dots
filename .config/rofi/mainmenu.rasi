@@ -1,39 +1,13 @@
-*{
-  bg: #333344;
-  bg-alt: #444444;
-  fg: #f5f5f5;
-  br: #954eff;
-  x0: #0a6cf5;
-  x0:     #282A36;
-  x1:     #F37F97;
-  x2:     #5ADECD;
-  x3:     #F2A272;
-  x4:     #8897F4;
-  x5:     #C574DD;
-  x6:     #79E6F3;
-  x7:     #80FF80;
-  x8:     #414458;
-  x9:     #FF4971;
-  x10:    #18E3C8;
-  x11:    #FF8037;
-  x12:    #556FFF;
-  x13:    #B043D1;
-  x14:    #3FDCEE;
-  x15:    #FDFDFD;
-  x16:    #00E6E6;
-  x17:    #000000;
-  x18:    #4DFF4D;
-  x19:    #0086b3;
-}
+@import "colors.rasi"
 
 window{
   width: 30%;
   height: 60%;
   padding: 5 10 5 10;
-  background-color: rgba(51, 51, 68, 100%) ;
+  background-color: @bg;
   border: 2;
   border-radius: 15;
-  border-color: @br;
+  border-color: @bd;
 }
 mainbox{
   background-color: @bg;
@@ -77,13 +51,13 @@ element alternate.urgent{
   text-color: @fg;
 }
 element selected{
-  background-color: @br;
-  text-color: @fg;
+  background-color: @bd;
+  text-color: @fg-alt;
 }
 
 mode-switcher {
   border: 0;
-  border-color: @br;
+  border-color: @bd;
   padding: 3 0 0 0;
   //border-radius: 10;
   background-color: @bg;
@@ -98,7 +72,7 @@ button {
 }
 button selected{
   border: 2 0 0 0;
-  border-color: @br;
+  border-color: @bd;
 }
 
 inputbar{
@@ -106,7 +80,7 @@ inputbar{
   text-color: @fg;
   border: 2;
   border-radius: 5px;
-  border-color: @br;
+  border-color: @bd;
   padding: 10;
   margin: 0 0 5 0;
 }

@@ -20,6 +20,6 @@ run nitrogen --restore
 #run fromscratch
 run numlockx
 
-run picom
+#run picom
 run dunst
 run volumeicon

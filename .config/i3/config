@@ -141,54 +141,59 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+  # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym ccedilla resize grow width 10 px or 10 ppt
+  # Pressing left will shrink the window’s width.
+  # Pressing right will grow the window’s width.
+  # Pressing up will shrink the window’s height.
+  # Pressing down will grow the window’s height.
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym ccedilla resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+  # back to normal: Enter or Escape or $mod+r
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#	status_command i3blocks
-#	position top
-#	colors {
-#		background #313134
-#		focused_workspace #3d42a1 #5050c0 #ffffff
-#		inactive_workspace #2c2c50 #35385f #a6a6a6
-#		statusline #ffffff
-#	}
-#}
+# bar {
+#   status_command i3blocks -c $HOME/.config/i3/i3blocks
+#   position bottom
+#   font pango:NotoSansMono Nerd Font 9
+#   workspace_buttons no
+#   binding_mode_indicator yes
+#   colors {
+#     background #333344
+#     focused_workspace #3d42a1 #5050c0 #ffffff  
+#     inactive_workspace #2c2c50 #35385f #a6a6a6
+#     statusline #f5f5f5
+#   }
+# }
 
+# Rules
 for_window [class="(?i)fromscratch"] floating enable
 for_window [class="(?i)^.*xed"] floating enable
 for_window [class="(?i)^.*engrampa"] floating enable
 for_window [class="(?i)^.*pick"] floating enable
 for_window [class="^.*"] border pixel 0
 for_window [class="^firefox"] border pixel 0
+
 gaps inner 10
 gaps outer 3
 
-border_radius 10
+#border_radius 10
 #smart_borders on
 hide_edge_borders vertical
 
@@ -201,9 +206,9 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
 
-#bindsym $mod+Print exec xfce4-screenshooter -f
-#bindsym $mod+shift+Print exec xfce4-screenshooter -r
-#bindsym $mod+Control+Print exec xfce4-screenshooter -w
+bindsym $mod+Print exec xfce4-screenshooter -f
+bindsym $mod+shift+Print exec xfce4-screenshooter -r
+bindsym $mod+Control+Print exec xfce4-screenshooter -w
 
 bindsym $mod+plus gaps inner all plus 5
 bindsym $mod+minus gaps inner all minus 5
@@ -214,4 +219,5 @@ bindsym $mod+alt+Up exec amixer -q set Master 1+
 bindsym $mod+alt+Down exec amixer -q set Master 1-
 
 exec $HOME/.config/i3/autorun.sh
+exec_always --no-startup-id picom &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
