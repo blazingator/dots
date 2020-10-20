@@ -26,7 +26,7 @@ logout=""
 
 options="$shutdown\n$reboot\n$lock\n$logout"
 
-chosen="$(echo -e "$options" | $rofi_cmd -p "Power menu" -dmenu)"
+chosen="$(echo -e "$options" | $rofi_cmd -p "Power menu" -a 1 -u 0 -dmenu)"
 case $chosen in
   $shutdown)
     confirm "systemctl poweroff" "Desligar?"

@@ -1,21 +1,13 @@
 @import "../colors.rasi"
 
-*{
-  icon-font: "NotoSansMono Nerd Font 22";
-}
-
 #window{
   location: center;
- /* anchor: center; */
-  border: 2px;
+  /*border: 2px;*/
+  /* border-color: @bd; */
   background-color: @bg;
   border-radius: 15px;
-  /* border-color: @bd; */
-  width: 32%;
-  height: 63px;
-  /* x-offset: 5%; */
-  /* y-offset: 5%; */
-  font: @icon-font;
+  width: 436;
+  height: 20%;
 }
 
 #horibox{
@@ -28,20 +20,35 @@
   layout: horizontal;
   spacing: 4px;
   background-color: @xbg;
+  padding: 0 0 0 15;
 }
 
 #window{
-  padding: 4px 4px;
+  padding: 4px 10px;
   children: [ inputbar, horibox ];
 }
 
 #inputbar{
+  background-color: inherit;
+}
+#prompt{
+  background-color: inherit;
+  text-color: @fg;
+  margin: 10 0 15 170;
+  border-color: @bd;
+  border: 0 0 2 0;
+  font: "Roboto Medium 16";
+}
+#entry{
+  enabled: false;
+}
+#case-indicator{
   enabled: false;
 }
 
 #element{
-  padding: 5 15 5 -10;
-  /* margin: 0 5; */
+  padding: 5 15 5 0;
+  margin: 20 0 0 15;
   text-color: @fg;
   background-color: @xbg;
 }

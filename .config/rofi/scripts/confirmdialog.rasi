@@ -31,7 +31,7 @@
   border-color: @bd;
   border: 0 0 3 0;
   text-color: @fg;
-  margin: 10 0 0 118;
+  margin: 10 0 0 170;
   font: @icon-font;
 }
 #entry{
@@ -50,4 +50,5 @@
 }
 #element.selected.normal{
   background-color: @bd;
+  text-color: @bg;
 }

@@ -1,0 +1,42 @@
+@import "../colors.rasi"
+
+#window{
+  location: center;
+  width: 436;
+  height: 20%;
+  background-color: @bg;
+  font: "NotoSansMono Nerd Font 22";
+}
+
+#horibox{
+  background-color: @xbg;
+  children: [ listview ];
+}
+
+#listview{
+  layout: horizontal;
+  spacing: 4px;
+  margin: 50 0 0 5%;
+  background-color: inherit;
+}
+
+#window{
+  children: [ inputbar, horibox ];
+}
+
+#inputbar{
+  enabled: false;
+}
+
+#element{ 
+  text-color: @fg;
+  width: 100;
+  height: 100;
+  padding: 10 0 10 6;
+  background-color: @xbg;
+}
+
+#element.selected.normal{
+  background-color: @bd;
+  text-color: @fg-alt;
+}
