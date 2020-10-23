@@ -24,6 +24,7 @@
 include-file = $HOME/.config/polybar/modules.conf
 
 [colors]
+; AARRGGBB
 ; Layan Colorscheme ==
 ;background = ${xrdb:color0:#222}
 ; background = #333344
@@ -40,8 +41,10 @@ include-file = $HOME/.config/polybar/modules.conf
 ; cyan = #4bffdc
 
 ; Layan light Colorscheme ==
-background-alt = #e3f4fb
 background = #eff9f9
+background-alt = #e3fafb
+xbackground-alt = #c0e3f4fb
+xbackground = #c0eff9f9
 foreground = #222
 foreground-alt = #2d2d2d
 alert = #ff3967
@@ -56,10 +59,8 @@ width = 100%
 height = 27
 
 radius = 6.0
-fixed-center = false
 
-;background = ${colors.background}
-;foreground = ${colors.foreground}
+fixed-center = false
 
 line-size = 3
 line-color = #f00
@@ -72,10 +73,6 @@ padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 2
-
-;font-0 = fixed:pixelsize=10;1
-;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-;font-2 = siji:pixelsize=10;1
 
 modules-left = apps i3 
 modules-center = xwindow
@@ -152,7 +149,7 @@ font-5 = "Symbols Nerd Font:pixelsize=10;1"
 
 cursor-click = pointer
 
-background = ${colors.background}
+background = ${colors.xbackground}
 foreground = ${colors.foreground}
 
 [settings]
