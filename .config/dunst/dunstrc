@@ -1,5 +1,6 @@
+#vi:ft=dosini
 [global]
-    background = "#54478c"
+    background = "#54478c6f"
     foreground = "#b2f7ef"
     font = Roboto Regular 11
     markup = yes
@@ -24,7 +25,7 @@
     separator_height = 2
     padding = 10
     horizontal_padding = 20
-    frame_color = "#16A085"
+    frame_color = "#54478c6f"
     separator_color = frame
     frame_width = 1
     startup_notification = false
@@ -33,23 +34,20 @@
     icon_position = left
     icon_path = /usr/share/icons/Marwaita/48x48/actions/:/usr/share/icons/Marwaita/48x48/apps/:/usr/share/icons/Marwaita/48x48/devices/:/usr/share/icons/Marwaita/48x48/emblems/:/usr/share/icons/Marwaita/48x48/emotes/:/usr/share/icons/Marwaita/48x48/mimetypes/:/usr/share/icons/Marwaita/48x48/places/:/usr/share/icons/Marwaita/48x48/status/
 
-[shortcuts]
-close = ctrl+space
-
 [urgency_low]
-    background = "#6930c3"
+    background = "#6930c36f"
     foreground = "#b2f7ef"
-    frame_color = "#b2f7ef"
+    frame_color = "#6930c36f"
     timeout = 3
 
 [urgency_normal]
-    background = "#6930c3"
+    background = "#6930c35f"
     foreground = "#ffbe0b"
-    frame_color = "#ffbe0b"
+    frame_color = "#6930c35f"
     timeout = 3
 
 [urgency_critical]
-    background = "#ef233c"
+    background = "#ef233c9f"
     foreground = "#f4f1de"
-    frame_color = "#f4f1de"
+    frame_color = "#ef233c9f"
     timeout = 5
