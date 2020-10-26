@@ -1,0 +1,44 @@
+
+# applications menu
+super+d
+  rofi -show drun
+
+#apps
+super+{q,shift+f,shift+e}
+  {firefox,thunar,lxterminal -e bpytop}
+
+# terminal
+super+Return
+  lxterminal
+
+# reload keybindings & bar
+super+shift+r
+  pkill -USR1 -x sxhkd && $HOME/.config/polybar/launch.sh
+
+#close or kill
+super + {_,shift+}w
+  bspc node -{c,k}
+
+## bspwm bindings
+super+alt+{q,r}
+  bspc {quit, wm -r}
+
+# set window state
+super + {t,shift+t,s,f}
+  bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set node tags
+super+ctrl+{m,x,y,z}
+  bspc node -g {marked,locked,sticky,private}
+
+# focus os send to given desktop
+super+{_,shift}{1-6}
+  bspc {desktop -f,node -d} '^{1-6}'
+
+# focus/swap node
+super + {_,shift+}{h,j,k,l}
+  bspc node -{f,s} {west,south,north,east}
+
+#move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}

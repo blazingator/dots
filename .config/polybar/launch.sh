@@ -6,7 +6,8 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
+
 # Launch
-polybar i3-bar &
+polybar mainbar &
 
 echo "Bars launched..."

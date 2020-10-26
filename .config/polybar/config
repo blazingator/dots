@@ -53,7 +53,7 @@ secondary = #e60053
 green = #16ca52
 cyan = #27d3b2 
 
-[bar/i3-bar]
+[bar/mainbar]
 inherit = section/base-style
 width = 100%
 height = 27
@@ -74,8 +74,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-modules-left = apps i3 
-modules-center = xwindow
+modules-left = apps
+modules-center = i3 bspwm
 modules-right = fav-apps memory cpu eth date rofi-powermenu
 
 tray-position = right
