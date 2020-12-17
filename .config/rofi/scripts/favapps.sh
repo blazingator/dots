@@ -20,7 +20,7 @@ confDirs(){
   polybarConf="polybar"
   vimConf="vim"
   
-    local options="$i3Conf\n$rofiConf\n$polybarConf\n$vimConf"
+  local options="$i3Conf\n$rofiConf\n$polybarConf\n$vimConf"
 
   local chosen="$(echo -e "$options" | $rofi_cmd -p "Config" -dmenu)"
   
