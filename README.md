@@ -27,4 +27,4 @@
 
 ![screenshot1][shot1]
 
-[shot1]: https://github.com/noobdojs/dots/blob/master/newshot.png
+[shot1]: images/newshot.png
