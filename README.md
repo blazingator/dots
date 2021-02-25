@@ -1,10 +1,9 @@
 # My personal dotfiles
 
 ## My desktop
-- WM: [i3-gaps](https://github.com/resloved/i3)
-- Status bar: [polybar](https://github.com/polybar/polybar)
-- Terminal: [lxterminal](https://wiki.lxde.org/en/LXTerminal)
-- Shell: [zsh]() with [oh my zsh](https://ogmyz.sh)
+- WM: [awesomeWM](awesomewm.org/) with [Purhan](http://github.com/Purhan) config (with some changes)
+- Terminal: [alacritty](https://github.com/alacritty/alacritty)
+- Shell: [zsh](zsh.sourceforge.net/) with [oh my zsh](https://ohmyz.sh)
 - Compositor: [picom](https://github.com/ibhagwan/picom)
 - App launcher & menu: [rofi](http://github.com/davatorium/rofi)
 - File manager: [Thunar](https://wiki.archlinux.org/index.php/Thunar)
@@ -16,10 +15,8 @@
 ---
 
 ### Also:
-- Ricing for [AwesomeWM](https://awesomewm.org) with [awesome-copycats](https://github.com/lcpz/awesome-copycats) preset
-- Ricing for [HerbstlufWM](https://herbstluftwm.org)
-
-- [Wallpaper](https://wallhaven.cc/w/kwp6r1)
+- Config for [HerbstlufWM](https://herbstluftwm.org)
+- Config for [i3-gaps](https://github.com/resolved/i3)
 
 ---
 
@@ -27,4 +24,4 @@
 
 ![screenshot1][shot1]
 
-[shot1]: images/newshot.png
+[shot1]: images/shot1-awm.png
