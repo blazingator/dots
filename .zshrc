@@ -1,18 +1,30 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export TERMINAL='lxterminal'
-export PEN="/run/media/vinicius/Cruzerforce"
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
-export DOTNET_ROOT=/run/media/vinicius/dados/dotnet
-export ANDROID_HOME=/run/media/vinicius/dados/Android/linux/Sdk
-export JAVA_HOME=/run/media/vinicius/dados/dev/jdk8u262-b10/
-export PATH=$PATH:$HOME/.npm-packages/bin:$HOME/.local/bin:$DOTNET_ROOT:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/build-tools/30.0.0:$ANDROID_HOME/emulator:$HOME/.dotnet/tools:$JAVA_HOME/bin
+export TERMINAL=$TERM
+export PEN=/run/media/vinicius/Cruzerforce
+export DADOS=/run/media/vinicius/dados
+export STEAMAPPS=$DADOS/steamlinux/steamapps/common
+#export DOTNET_CLI_TELEMETRY_OPTOUT=1
+#export DOTNET_ROOT=/run/media/vinicius/dados/dotnet
+# export ANDROID_HOME=/run/media/vinicius/dados/Android/linux/Sdk
+export JAVA_HOME=$HOME/.openjdk/jre8
+export STEAM_COMPAT_DATA_PATH=~/.proton
+export PROTONPATH="$STEAMAPPS/Proton 5.0"
+export WINEPREFIX=$PROTONPATH/dist/share/default_pfx
+#export PATH=$PATH:$DOTNET_ROOT:$HOME/.dotnet/tools
+export PATH=$PATH:$JAVA_HOME/bin
+export PATH=$PATH:$PROTONPATH:$PROTONPATH/dist/bin
+export PATH=$PATH:$HOME/.local/bin
 
 stty -ixon
 
-alias sdkmanager='sdkmanager --sdk_root=${ANDROID_HOME}'
+# alias sdkmanager='sdkmanager --sdk_root=${ANDROID_HOME}'
 alias sqlite='sqlite3'
+alias noblank='xset s off; xset -dpms; xset s noblank'
+
+# nvm
+source /usr/share/nvm/init-nvm.sh
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/vinicius/.oh-my-zsh"
@@ -21,7 +33,7 @@ export ZSH="/home/vinicius/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME="daivasmara"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -94,7 +106,7 @@ fpath=( "$HOME/.zfunctions" $fpath )
 #autoload -U promptinit; promptinit
 #prompt lambda-pure
 
-# Spaceshipt config
+# Spaceship config
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
@@ -116,6 +128,7 @@ SPACESHIP_PROMPT_ORDER=(
 )
 
 SPACESHIP_USER_SHOW=always
+SPACESHIP_USER_PREFIX=" "
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="λ"
 SPACESHIP_CHAR_SUFFIX=" "
@@ -137,7 +150,7 @@ export ALIEN_SECTIONS_LEFT=(
 export ALIEN_SECTIONS_RIGHT=(
   time
 )
-export ALIEN_VERSIONS_PROMPT='PYTHON_S RUBY_S NODE'
+export ALIEN_VERSIONS_PROMPT='"PYTHON_S RUBY_S NODE'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -185,6 +198,7 @@ zinit light-mode for \
     zinit-zsh/z-a-bin-gem-node
 
 zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
 zinit light zdharma/fast-syntax-highlighting
 zinit light olivierverdier/zsh-git-prompt
 #zinit light eendroroy/alien
@@ -194,3 +208,6 @@ zinit light mafredri/zsh-async
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+alias grep='rg'

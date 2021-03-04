@@ -24,7 +24,7 @@ run nitrogen --restore
 hc keyunbind --all
 
 Mod=Mod4
-myTerm=lxterminal
+myTerm=alacritty
 myEditor=neovim-qt
 
 hc keybind $Mod-Return spawn $myTerm

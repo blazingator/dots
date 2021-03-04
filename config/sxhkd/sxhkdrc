@@ -4,19 +4,19 @@ super+d
   rofi -show drun
 
 #apps
-super+{q,shift+f,shift+e}
-  {firefox,thunar,lxterminal -e bpytop}
+super+{b,shift+f,shift+e}
+  {firefox,thunar,alacritty -e bpytop}
 
 # terminal
 super+Return
-  lxterminal
+  alacritty
 
 # reload keybindings & bar
 super+shift+r
   pkill -USR1 -x sxhkd && $HOME/.config/polybar/launch.sh
 
 #close or kill
-super + {_,shift+}w
+super + {_,shift+}q
   bspc node -{c,k}
 
 ## bspwm bindings
