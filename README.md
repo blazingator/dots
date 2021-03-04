@@ -1,7 +1,7 @@
 # My personal dotfiles
 
 ## My desktop
-- WM: [awesomeWM](awesomewm.org/) with [Purhan](http://github.com/Purhan) config (with some changes)
+- WM: [awesomeWM](awesomewm.org/) 
 - Terminal: [alacritty](https://github.com/alacritty/alacritty)
 - Shell: [zsh](zsh.sourceforge.net/) with [oh my zsh](https://ohmyz.sh)
 - Compositor: [picom](https://github.com/ibhagwan/picom)
@@ -11,6 +11,9 @@
 - Notifications: [dunst](https://github.com/dunst-project/dunst)
 - Editor: [Neovim](https://github.com/neovim/neovim)
 - Wallpaper engine: [nitrogen](http://projects.l3ib.org/nitrogen)
+- WM Theme: multicolor [lcpz](https://github.com/lcpz/awesome-copycats) converted to [moonscript](https://moonscript.org)
+
+[Wallpaper](https://www.freepik.com/free-vector/sunset-sunrise-ocean-nature-landscape_6362773.htm)
 
 ---
 
@@ -21,7 +24,9 @@
 ---
 
 ## Preview
+|Terminal/Editor|Desktop/wallpaper|
+|-|-|
+|![screenshot1][shot1]|![screenshot2][shot2]
 
-![screenshot1][shot1]
-
-[shot1]: images/shot1-awm.png
+[shot1]: images/shot-awm-multicolor.png
+[shot2]: images/shot-awm-multicolor2.png
