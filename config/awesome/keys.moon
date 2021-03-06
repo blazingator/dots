@@ -31,6 +31,10 @@ export clientkeys = gears.table.join(
     {description: "toggle floating", group: "client"})
   awful.key({modkey, "Shift"}, "q", (c) -> c\kill!,
   {description: "kill client", group: "client"})
+  awful.key({modkey}, "m", (c) -> with c
+    .maximized = not .maximized
+    c\raise!,
+    {description: "toggle maximized client", group: "client"})
 )
 
 export globalkeys = gears.table.join(

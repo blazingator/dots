@@ -41,7 +41,7 @@ with awful.layout.suit
 		}
 
 tags = for _ = 1, screen.count!
-	awful.tag {1,2,3,4,5},
+	awful.tag {"", "", "", "", ""},
 		s, awful.layout.suit.tile
 
 

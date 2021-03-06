@@ -49,13 +49,13 @@ taskbuttons = gears.table.join(
 --- top wibar Widgets
 
 -- Calendar
--- cal = lain.widget.cal {
---   attach_to: mytextclock
---   notification_preset: 
---     font: "Terminus 10"
---     fg: theme.fg_normal
---     bg: theme.bg_normal
--- }
+cal = lain.widget.cal {
+  attach_to: mytextclock
+  notification_preset: 
+    font: "Terminus 10"
+    fg: theme.fg_normal
+    bg: theme.bg_normal
+}
 
 -- weather widget
 weathericon = wibox.widget.imagebox theme.widget_weather
@@ -121,60 +121,60 @@ at_screen_connect = =>
 		  wallpaper = wallpaper(@)
 
 		gears.wallpaper.maximized(wallpaper, @, true)
- 
+
 		@mypromptbox = awful.widget.prompt!
 
 		@mylayoutbox = with awful.widget.layoutbox(s)
-			\buttons gears.table.join(
-				awful.button({}, 1, -> awful.layout.inc 1)
-				awful.button({}, 3, -> awful.layout.inc -1))
+		  \buttons gears.table.join(
+		    awful.button({}, 1, -> awful.layout.inc 1)
+		    awful.button({}, 3, -> awful.layout.inc -1))
 
 		@mytaglist = awful.widget.taglist {
-			screen: @
-			filter: awful.widget.taglist.filter.all
-			buttons: tagbuttons
+		  screen: @
+		  filter: awful.widget.taglist.filter.all
+		  buttons: tagbuttons
 		}
 
 		@mytasklist = awful.widget.tasklist {
-			screen: @
-			filter: awful.widget.tasklist.filter.currenttags
-			buttons: taskbuttons
+		  screen: @
+		  filter: awful.widget.tasklist.filter.currenttags
+		  buttons: taskbuttons
 		}
 
 		with awful.wibar
-			  position: "top"
-			  screen: @
-			  height: dpi 25
-			\setup {
-			  layout: wibox.layout.align.horizontal
-			  {
-			    layout: wibox.layout.fixed.horizontal
-			    @mytaglist
-			    @mypromptbox
-			  },
-			  --@mytasklist,
-			  nil,
-			  {
-			    layout: wibox.layout.fixed.horizontal
-			    wibox.widget.systray!
-			    neticons.netdown
-			    netdowninfo
-			    neticons.netup
-			    netupinfo.widget
-			    volicon
-			    volume.widget
-			    weather_icon
-			    memicon
-			    meminfo.widget
-			    cpuicon
-			    cpu.widget
-			    weather
-			    tempicon
-			    temp.widget
-			    clock.clockicon
-			    clock.mytextclock
-			  }
-			}
+		    position: "top"
+		    screen: @
+		    height: dpi 25
+		  \setup {
+		    layout: wibox.layout.align.horizontal
+		    {
+		      layout: wibox.layout.fixed.horizontal
+		      @mytaglist
+		      @mypromptbox
+		    },
+		    --@mytasklist,
+		    nil,
+		    {
+		      layout: wibox.layout.fixed.horizontal
+		      wibox.widget.systray!
+		      neticons.netdown
+		      netdowninfo
+		      neticons.netup
+		      netupinfo.widget
+		      volicon
+		      volume.widget
+		      memicon
+		      meminfo.widget
+		      cpuicon
+		      cpu.widget
+		      weathericon
+		      weather
+		      tempicon
+		      temp.widget
+		      clock.clockicon
+		      clock.mytextclock
+		      }
+		  }
 
 		with awful.wibar
 		    position: "bottom"
