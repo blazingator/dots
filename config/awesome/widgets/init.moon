@@ -72,18 +72,22 @@ weather = lain.widget.weather({
     widget\set_markup markup.fontfg theme.font, "#eca4c4", desc .. " @ " .. units .. "ºC"})
 
 -- Alsa volume
-volicon = wibox.widget.imagebox theme.widget_vol
+volicon = wibox.widget.textbox " "
 volume = lain.widget.alsa {
   settings: ->
     volume_now.level = volume_now.level .. "M" if volume_now.status == "off"
 
-    widget\set_markup markup.fontfg theme.font, "#7493d2", volume_now.level .. "%"
+    widget\set_markup markup.fontfg theme.font, "#7493d2", volicon.text .. volume_now.level .. "%"
 }
 
 -- Net
 neticons = 
-  netdown: wibox.widget.imagebox theme.widget_netdown
-  netup: wibox.widget.imagebox theme.widget_netup
+  netdown: wibox.widget
+    markup: markup.fontfg theme.font, "#87af5f", "<b>  </b>"
+    widget: wibox.widget.textbox
+  netup: wibox.widget
+    markup: markup.fontfg theme.font, "#e54c62", "<b>  </b>"
+    widget: wibox.widget.textbox
 
 netdowninfo = wibox.widget.textbox!
 netupinfo = lain.widget.net {
@@ -96,23 +100,29 @@ netupinfo = lain.widget.net {
 }
 
 -- mem widget
-memicon = wibox.widget.imagebox theme.widget_mem
+memicon = wibox.widget 
+  markup: markup.fontfg theme.font, "#e0da37", "<b> </b>"
+  widget: wibox.widget.textbox
+
 meminfo = lain.widget.mem {
   settings: ->
     widget\set_markup markup.fontfg theme.font, "#e0da37", mem_now.used .. "M "
 }
 
 -- cpu widget
-cpuicon = wibox.widget.imagebox theme.widget_cpu
+cpuicon = wibox.widget
+  markup: markup.fontfg theme.font, "#e33a6e", "<b> </b>"
+  widget: wibox.widget.textbox
+
 cpu = lain.widget.cpu
 	settings: ->
 		widget\set_markup markup.fontfg theme.font, "#e33a6e", cpu_now.usage .. "% "
 
 -- cpu temp widget
-tempicon = wibox.widget.imagebox theme.widget_temp
+tempicon = wibox.widget.textbox ""
 temp = lain.widget.temp
 	settings: ->
-		widget\set_markup markup.fontfg theme.font, "#f1af5f", coretemp_now .. "ºC"
+		widget\set_markup markup.fontfg theme.font, "#f1af5f", tempicon.text .. coretemp_now .. "ºC"
 
 at_screen_connect = =>
 		
@@ -161,7 +171,6 @@ at_screen_connect = =>
 		      netdowninfo
 		      neticons.netup
 		      netupinfo.widget
-		      volicon
 		      volume.widget
 		      memicon
 		      meminfo.widget
@@ -169,9 +178,7 @@ at_screen_connect = =>
 		      cpu.widget
 		      weathericon
 		      weather
-		      tempicon
 		      temp.widget
-		      clock.clockicon
 		      clock.mytextclock
 		      }
 		  }

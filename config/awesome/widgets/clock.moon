@@ -4,8 +4,8 @@ xresources = require "beautiful.xresources"
 dpi = xresources.apply_dpi
 theme = require "theme.theme"
 
-clockicon = wibox.widget.imagebox theme.widget_clock
-mytextclock = wibox.widget.textclock markup "#7788af", "%A %d %B" .. markup "#ab7367", ">" .. markup "#de5e1e", "%H:%M"
+clockicon = wibox.widget.textbox "  " 
+mytextclock = wibox.widget.textclock markup "#7788af", clockicon.text .. "%A %d %B" .. markup "#ab7367", ">" .. markup "#de5e1e", "%H:%M"
 mytextclock.font = theme.font
 
 ClockPanel = (s, offset) ->
