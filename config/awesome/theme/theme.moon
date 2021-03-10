@@ -2,19 +2,21 @@ gears = require "gears"
 xres = require "beautiful.xresources"
 dpi = xres.apply_dpi
 
+colors = require "theme.colors"
+
 with {}
   .themedir =   "/home/vinicius/.config/awesome/theme"
   .wallpaper = .themedir .. "/wall.jpg"
   .font = "Terminus 10"
   .menu_bg_normal = "#000000"
   .menu_bg_focus = "#000000"
-  .bg_normal = "#313134"
+  .bg_normal = colors.grey
   .bg_focus = "#222222"
-  .bg_urgent = "#000000"
+  .bg_urgent = colors.black
   .fg_normal = "#aaaaaa"
-  .fg_focus = "#ff8c00"
-  .fg_urgent = "#af1d18"
-  .fg_minimize = "#ffffff"
+  .fg_focus = colors.orange
+  .fg_urgent = colors.red
+  .fg_minimize = colors.white
   .border_width = dpi 0
   .border_normal = "#1c2022"
   .border_focus = "#606060"

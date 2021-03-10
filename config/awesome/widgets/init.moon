@@ -6,7 +6,7 @@ dpi = xres.apply_dpi
 gears = require "gears"
 
 theme = require "theme.theme"
-
+colors = require "theme.colors"
 clock = require "widgets.clock"
 
 markup = lain.util.markup
@@ -77,16 +77,16 @@ volume = lain.widget.alsa {
   settings: ->
     volume_now.level = volume_now.level .. "M" if volume_now.status == "off"
 
-    widget\set_markup markup.fontfg theme.font, "#7493d2", volicon.text .. volume_now.level .. "%"
+    widget\set_markup markup.fontfg theme.font, colors.indigo, volicon.text .. volume_now.level .. "%"
 }
 
 -- Net
 neticons = 
   netdown: wibox.widget
-    markup: markup.fontfg theme.font, "#87af5f", "<b>  </b>"
+    markup: markup.fontfg theme.font, colors.green, "<b>  </b>"
     widget: wibox.widget.textbox
   netup: wibox.widget
-    markup: markup.fontfg theme.font, "#e54c62", "<b>  </b>"
+    markup: markup.fontfg theme.font, colors.red, "<b>  </b>"
     widget: wibox.widget.textbox
 
 netdowninfo = wibox.widget.textbox!
@@ -95,34 +95,34 @@ netupinfo = lain.widget.net {
     if iface ~= "network off" and string.match weather.widget.text, "N/A"
       weather.update!
 
-    widget\set_markup markup.fontfg theme.font, "#e54c62", net_now.sent .. " "
-    netdowninfo\set_markup markup.fontfg theme.font, "#87af5f", net_now.received .. " "
+    widget\set_markup markup.fontfg theme.font, colors.red, net_now.sent .. " "
+    netdowninfo\set_markup markup.fontfg theme.font, colors.green, net_now.received .. " "
 }
 
 -- mem widget
 memicon = wibox.widget 
-  markup: markup.fontfg theme.font, "#e0da37", "<b> </b>"
+  markup: markup.fontfg theme.font, colors.yellow, "<b> </b>"
   widget: wibox.widget.textbox
 
 meminfo = lain.widget.mem {
   settings: ->
-    widget\set_markup markup.fontfg theme.font, "#e0da37", mem_now.used .. "M "
+    widget\set_markup markup.fontfg theme.font, colors.yellow, mem_now.used .. "M "
 }
 
 -- cpu widget
 cpuicon = wibox.widget
-  markup: markup.fontfg theme.font, "#e33a6e", "<b> </b>"
+  markup: markup.fontfg theme.font, colors.pink, "<b> </b>"
   widget: wibox.widget.textbox
 
 cpu = lain.widget.cpu
 	settings: ->
-		widget\set_markup markup.fontfg theme.font, "#e33a6e", cpu_now.usage .. "% "
+	  widget\set_markup markup.fontfg theme.font, colors.pink, cpu_now.usage .. "% "
 
 -- cpu temp widget
 tempicon = wibox.widget.textbox ""
 temp = lain.widget.temp
 	settings: ->
-		widget\set_markup markup.fontfg theme.font, "#f1af5f", tempicon.text .. coretemp_now .. "ºC"
+	  widget\set_markup markup.fontfg theme.font, colors.orange, "" .. coretemp_now .. "ºC"
 
 at_screen_connect = =>
 		
@@ -176,8 +176,6 @@ at_screen_connect = =>
 		      meminfo.widget
 		      cpuicon
 		      cpu.widget
-		      weathericon
-		      weather
 		      temp.widget
 		      clock.mytextclock
 		      }

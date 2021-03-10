@@ -2,10 +2,12 @@ wibox = require "wibox"
 markup = require "lain.util.markup"
 xresources = require "beautiful.xresources"
 dpi = xresources.apply_dpi
+
 theme = require "theme.theme"
+colors = require "theme.colors"
 
 clockicon = wibox.widget.textbox "  " 
-mytextclock = wibox.widget.textclock markup "#7788af", clockicon.text .. "%A %d %B" .. markup "#ab7367", ">" .. markup "#de5e1e", "%H:%M"
+mytextclock = wibox.widget.textclock markup colors.blue, clockicon.text .. "%A %d %B" .. markup colors.yellow, ">" .. markup colors.orange, "%H:%M"
 mytextclock.font = theme.font
 
 ClockPanel = (s, offset) ->
