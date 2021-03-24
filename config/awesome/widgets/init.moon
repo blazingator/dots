@@ -8,6 +8,7 @@ gears = require "gears"
 theme = require "theme.theme"
 colors = require "theme.colors"
 clock = require "widgets.clock"
+taglist = require "widgets.taglist"
 
 markup = lain.util.markup
 
@@ -15,12 +16,8 @@ os.setlocale(os.getenv("LANG"))
 
 awful = require "awful"
 require "keys"
+apps = require "apps"
 
-tagbuttons = gears.table.join(
-  awful.button({}, 1, awful.tag.viewonly)
-  awful.button({modkey}, 1, awful.client.movetotag)
-  awful.button({}, 3, awful.tag.viewtoggle)
-)
 
 taskbuttons = gears.table.join(
   awful.button({}, 1, (c) ->
@@ -44,14 +41,12 @@ taskbuttons = gears.table.join(
   awful.button({}, 4, -> awful.client.focus.byidx 1)
   awful.button({}, 5, -> awful.client.focus.byidx -1)
 )
-
-
 --- top wibar Widgets
 
 -- Calendar
 cal = lain.widget.cal {
   attach_to: mytextclock
-  notification_preset: 
+  notification_preset:
     font: "Terminus 10"
     fg: theme.fg_normal
     bg: theme.bg_normal
@@ -81,7 +76,7 @@ volume = lain.widget.alsa {
 }
 
 -- Net
-neticons = 
+neticons =
   netdown: wibox.widget
     markup: markup.fontfg theme.font, colors.green, "<b>  </b>"
     widget: wibox.widget.textbox
@@ -100,7 +95,7 @@ netupinfo = lain.widget.net {
 }
 
 -- mem widget
-memicon = wibox.widget 
+memicon = wibox.widget
   markup: markup.fontfg theme.font, colors.yellow, "<b> </b>"
   widget: wibox.widget.textbox
 
@@ -115,17 +110,16 @@ cpuicon = wibox.widget
   widget: wibox.widget.textbox
 
 cpu = lain.widget.cpu
-	settings: ->
-	  widget\set_markup markup.fontfg theme.font, colors.pink, cpu_now.usage .. "% "
+  settings: ->
+    widget\set_markup markup.fontfg theme.font, colors.pink, cpu_now.usage .. "% "
 
 -- cpu temp widget
 tempicon = wibox.widget.textbox ""
 temp = lain.widget.temp
-	settings: ->
-	  widget\set_markup markup.fontfg theme.font, colors.orange, "" .. coretemp_now .. "ºC"
+  settings: ->
+    widget\set_markup markup.fontfg theme.font, colors.orange, "" .. coretemp_now .. "ºC"
 
 at_screen_connect = =>
-		
 		wallpaper = theme.wallpaper
 		if type(wallaper) == "function"
 		  wallpaper = wallpaper(@)
@@ -139,17 +133,17 @@ at_screen_connect = =>
 		    awful.button({}, 1, -> awful.layout.inc 1)
 		    awful.button({}, 3, -> awful.layout.inc -1))
 
-		@mytaglist = awful.widget.taglist {
-		  screen: @
-		  filter: awful.widget.taglist.filter.all
-		  buttons: tagbuttons
-		}
-
+		@mytaglist = taglist.create_tag_list @
+		
 		@mytasklist = awful.widget.tasklist {
 		  screen: @
 		  filter: awful.widget.tasklist.filter.currenttags
 		  buttons: taskbuttons
 		}
+
+		@rofimenu = with awful.widget.button
+		    image: theme.themedir .. "/icons/awesome_icon.png"
+		  \connect_signal "button::press", -> awful.spawn apps.apps.rofi
 
 		with awful.wibar
 		    position: "top"
@@ -159,8 +153,8 @@ at_screen_connect = =>
 		    layout: wibox.layout.align.horizontal
 		    {
 		      layout: wibox.layout.fixed.horizontal
+		      @rofimenu
 		      @mytaglist
-		      @mypromptbox
 		    },
 		    --@mytasklist,
 		    nil,
@@ -199,7 +193,8 @@ at_screen_connect = =>
 
 
 {
-  :at_screen_connect 
+  :mainmenu
+  :at_screen_connect
   weather:
     :weather
     :weather_icon
