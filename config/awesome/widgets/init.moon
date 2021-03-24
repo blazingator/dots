@@ -120,76 +120,76 @@ temp = lain.widget.temp
     widget\set_markup markup.fontfg theme.font, colors.orange, "" .. coretemp_now .. "ºC"
 
 at_screen_connect = =>
-		wallpaper = theme.wallpaper
-		if type(wallaper) == "function"
-		  wallpaper = wallpaper(@)
+  wallpaper = theme.wallpaper
+  if type(wallaper) == "function"
+    wallpaper = wallpaper(@)
 
-		gears.wallpaper.maximized(wallpaper, @, true)
+  gears.wallpaper.maximized(wallpaper, @, true)
 
-		@mypromptbox = awful.widget.prompt!
+  @mypromptbox = awful.widget.prompt!
 
-		@mylayoutbox = with awful.widget.layoutbox(s)
-		  \buttons gears.table.join(
-		    awful.button({}, 1, -> awful.layout.inc 1)
-		    awful.button({}, 3, -> awful.layout.inc -1))
+  @mylayoutbox = with awful.widget.layoutbox(s)
+    \buttons gears.table.join(
+      awful.button({}, 1, -> awful.layout.inc 1)
+      awful.button({}, 3, -> awful.layout.inc -1))
 
-		@mytaglist = taglist.create_tag_list @
-		
-		@mytasklist = awful.widget.tasklist {
-		  screen: @
-		  filter: awful.widget.tasklist.filter.currenttags
-		  buttons: taskbuttons
-		}
+  @mytaglist = taglist.create_tag_list @
 
-		@rofimenu = with awful.widget.button
-		    image: theme.themedir .. "/icons/awesome_icon.png"
-		  \connect_signal "button::press", -> awful.spawn apps.apps.rofi
+  @mytasklist = awful.widget.tasklist {
+    screen: @
+    filter: awful.widget.tasklist.filter.currenttags
+    buttons: taskbuttons
+  }
 
-		with awful.wibar
-		    position: "top"
-		    screen: @
-		    height: dpi 25
-		  \setup {
-		    layout: wibox.layout.align.horizontal
-		    {
-		      layout: wibox.layout.fixed.horizontal
-		      @rofimenu
-		      @mytaglist
-		    },
-		    --@mytasklist,
-		    nil,
-		    {
-		      layout: wibox.layout.fixed.horizontal
-		      wibox.widget.systray!
-		      neticons.netdown
-		      netdowninfo
-		      neticons.netup
-		      netupinfo.widget
-		      volume.widget
-		      memicon
-		      meminfo.widget
-		      cpuicon
-		      cpu.widget
-		      temp.widget
-		      clock.mytextclock
-		      }
-		  }
+  @rofimenu = with awful.widget.button
+      image: theme.themedir .. "/icons/awesome_icon.png"
+    \connect_signal "button::press", -> awful.spawn apps.apps.rofi
 
-		with awful.wibar
-		    position: "bottom"
-		    screen: @
-		    height: dpi 20
-		  \setup {
-		    layout: wibox.layout.align.horizontal
-		    {
-		      layout: wibox.layout.align.horizontal
-		    }
-		    @mytasklist
-		    {
-		      layout: wibox.layout.fixed.horizontal
-		      @mylayoutbox
-		    }
-		  }
+  with awful.wibar
+      position: "top"
+      screen: @
+      height: dpi 25
+    \setup {
+      layout: wibox.layout.align.horizontal
+      {
+        layout: wibox.layout.fixed.horizontal
+        @rofimenu
+        @mytaglist
+      },
+      --@mytasklist,
+      nil,
+      {
+        layout: wibox.layout.fixed.horizontal
+        wibox.widget.systray!
+        neticons.netdown
+        netdowninfo
+        neticons.netup
+        netupinfo.widget
+        volume.widget
+        memicon
+        meminfo.widget
+        cpuicon
+        cpu.widget
+        temp.widget
+        clock.mytextclock
+        }
+    }
+
+  with awful.wibar
+      position: "bottom"
+      screen: @
+      height: dpi 20
+    \setup {
+      layout: wibox.layout.align.horizontal
+      {
+        layout: wibox.layout.align.horizontal
+      }
+      @mytasklist
+      {
+        layout: wibox.layout.fixed.horizontal
+        @mylayoutbox
+      }
+    }
 
 
 {

@@ -11,10 +11,10 @@ with {}
   .menu_bg_normal = "#000000"
   .menu_bg_focus = "#000000"
   .bg_normal = colors.grey
-  .bg_focus = "#222222"
+  .bg_focus = colors.black
   .bg_urgent = colors.black
   .fg_normal = "#aaaaaa"
-  .fg_focus = colors.orange
+  .fg_focus = "#954eff"
   .fg_urgent = colors.red
   .fg_minimize = colors.white
   .border_width = dpi 0
@@ -25,10 +25,10 @@ with {}
   .menu_width = dpi 130
   .menu_submenu_icon = .themedir .. "/icons/submenu.png"
   .menu_fg_normal = "#aaaaaa"
-  .menu_fg_focus = "#ff8c00"
-  .menu_bg_normal = "#050505dd"
-  .menu_bg_focus = "#050505dd"
-  .widget_temp                               = .themedir .. "/icons/temp.png"                                
+  .menu_fg_focus = colors.deep_purple
+  .menu_bg_normal = colors.grey
+  .menu_bg_focus = colors.grey
+  .widget_temp                               = .themedir .. "/icons/temp.png"
   .widget_uptime                             = .themedir .. "/icons/ac.png"
   .widget_cpu                                = .themedir .. "/icons/cpu.png"
   .widget_weather                            = .themedir .. "/icons/dish.png"

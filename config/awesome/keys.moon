@@ -3,7 +3,6 @@ gears = require "gears"
 
 hotkeys_popup = require "awful.hotkeys_popup"
 
-
 export modkey = "Mod4"
 export altkey = "Mod1"
 
@@ -30,7 +29,7 @@ export clientkeys = gears.table.join(
     \raise!,
     {description: "toggle floating", group: "client"})
   awful.key({modkey, "Shift"}, "q", (c) -> c\kill!,
-  {description: "kill client", group: "client"})
+    {description: "kill client", group: "client"})
   awful.key({modkey}, "m", (c) -> with c
     .maximized = not .maximized
     c\raise!,
@@ -49,12 +48,12 @@ export globalkeys = gears.table.join(
   awful.key({modkey}, "d", -> awful.client.focus.byidx 1, {description: "view next", group: "tag"})
   awful.key({modkey}, "a", -> awful.client.focus.byidx -1, {description: "view previous", group: "tag"})
   awful.key({modkey}, "r", -> awful.spawn default_apps.apps.rofi, {description: "show rofi menu", group: "awesome"})
-  awful.key({modkey}, "u", awful.client.urgent.jumpto, {description:'jump to urgent client', group: 'client'})
+  awful.key({modkey}, "u", awful.client.urgent.jumpto, {description:"jump to urgent client", group: "client"})
   awful.key({modkey}, "Tab", ->
     awful.client.focus.byidx 1
     if client.focus
       client.focus\raise!, {description: "switch to next window", group: "client"})
-  awful.key({modkey, "Shift"}, "Tab", -> 
+  awful.key({modkey, "Shift"}, "Tab", ->
     awful.client.focus.byidx -1
     if client.focus
       client.focus\raise!, {description: "switch to previous window", group: "client"})
@@ -77,11 +76,11 @@ export globalkeys = gears.table.join(
   awful.key({modkey, 'Control'}, 'n', ->
     c = awful.client.restore
     -- Focus restored client
-    if c 
+    if c
       _G.client.focus = c
       c\raise!, {description:'restore minimized', group: 'client'})
-  awful.key({'Control', 'Shift'}, 'Escape', ->
-  awful.util.spawn.with_shell 'alacritty -e bpytop',{description: 'Open system monitor', group: 'hotkeys'})
+  awful.key({'Control', 'Shift'}, 'Escape', -> awful.spawn.with_shell 'alacritty -e bpytop',
+    {description: 'Open system monitor', group: 'launcher'})
 )
 
 for i = 1, 9
@@ -98,11 +97,11 @@ for i = 1, 9
       tag = screen.tags[i]
       tag\view_only! if tag,
       desc_view)
-    awful.key({modkey, "Control"}, "#" .. i + 9, -> 
+    awful.key({modkey, "Control"}, "#" .. i + 9, ->
       screen = awful.screen.focused!
       tag = screen.tags[i]
       awful.tag.viewtoggle tag if tag, desc_toggle)
-    awful.key({modkey, "Shift"}, "#" .. i + 9, -> 
+    awful.key({modkey, "Shift"}, "#" .. i + 9, ->
       if client.focus
         tag = client.focus.screen.tags[i]
         client.focus\move_to_tag tag if tag, desc_move)
