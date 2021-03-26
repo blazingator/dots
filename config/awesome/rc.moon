@@ -9,6 +9,7 @@ awful.rules = require "awful.rules"
 require "awful.autofocus"
 
 require "auto-start"
+require "components.titlebar"
 keys = require "keys"
 widgets = require "widgets"
 apps = require "apps"
@@ -83,6 +84,7 @@ awful.rules.rules = {
       keys: keys.clientkeys
       screen: awful.screen.preferred
       buttons: clientbuttons
+      titlebars_enabled: true
   }
 }
 

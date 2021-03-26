@@ -53,7 +53,6 @@ cal = lain.widget.cal {
 }
 
 -- weather widget
-weathericon = wibox.widget.imagebox theme.widget_weather
 weather = lain.widget.weather({
   city_id: 3447212
   notification_preset: {
