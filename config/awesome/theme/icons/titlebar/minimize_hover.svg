@@ -27,8 +27,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="171.18603"
-     inkscape:cy="440.25814"
+     inkscape:cx="62.654808"
+     inkscape:cy="307.51606"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -36,8 +36,8 @@
      inkscape:pagecheckerboard="true"
      units="px"
      lock-margins="true"
-     inkscape:window-width="1344"
-     inkscape:window-height="685"
+     inkscape:window-width="1314"
+     inkscape:window-height="707"
      inkscape:window-x="8"
      inkscape:window-y="33"
      inkscape:window-maximized="0" />
@@ -58,10 +58,18 @@
      inkscape:groupmode="layer"
      id="layer1">
     <circle
-       style="fill:#9defdb;fill-opacity:1;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       style="fill:#72f0d1;fill-opacity:1;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
        id="path10"
        cx="79.507294"
        cy="79.507294"
        r="67.948265" />
+    <rect
+       style="fill:#adf5e3;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000;fill-opacity:1"
+       id="rect8"
+       width="84.27282"
+       height="16.042616"
+       x="37.37088"
+       y="90.280739"
+       ry="6.6932702" />
   </g>
 </svg>

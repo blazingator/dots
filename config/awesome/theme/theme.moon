@@ -14,7 +14,7 @@ with {}
   .bg_focus = colors.black
   .bg_urgent = colors.black
   .fg_normal = "#aaaaaa"
-  .fg_focus = "#954eff"
+  .fg_focus = "#a96fff"
   .fg_urgent = colors.red
   .fg_minimize = colors.white
   .border_width = dpi 0
@@ -38,10 +38,10 @@ with {}
   .layout_floating = .themedir .. "/icons/floating.svg"
   -- titlebar
   --.titlebars_enabled = true
-  .titlebar_bg_focus = .bg_focus
-  .titlebar_bg_normal = .bg_normal
-  .titlebar_fg_focus = .fg_focus
-  .titlebar_fg_normal = .fg_normal
+  .titlebar_bg_focus = .bg_focus .. "aa"
+  .titlebar_bg_normal = .bg_normal .. "dd"
+  .titlebar_fg_focus = .fg_focus .. "aa"
+  .titlebar_fg_normal = .fg_normal .. "dd"
   .titlebar_close_button_normal = .themedir .. "/icons/titlebar/normal.svg"
   .titlebar_close_button_focus = .themedir .. "/icons/titlebar/close.svg"
   .titlebar_close_button_normal_hover = .themedir .. "/icons/titlebar/close_hover.svg"
@@ -53,7 +53,7 @@ with {}
   .titlebar_minimize_button_focus_hover = .themedir .. "/icons/titlebar/minimize_hover.svg"
 
   .titlebar_maximized_button_normal_inactive = .themedir .. "/icons/titlebar/normal.svg"
-  .titlebar_maximized_button_focus_inactive = .themedir .. "/icons/titlebar/maximized_hover.svg"
+  .titlebar_maximized_button_focus_inactive = .themedir .. "/icons/titlebar/maximized_focus.svg"
   .titlebar_maximized_button_normal_inactive_hover = .themedir .. "/icons/titlebar/maximized_hover.svg"
   .titlebar_maximized_button_focus_inactive_hover = .themedir .. "/icons/titlebar/maximized_hover.svg"
 
