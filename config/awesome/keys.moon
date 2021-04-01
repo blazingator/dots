@@ -40,6 +40,7 @@ export globalkeys = gears.table.join(
   awful.key({modkey}, "F1", hotkeys_popup.show_help, {description: "show help", group: "awesome"})
   awful.key({modkey, "Control"}, "r", _G.awesome.restart, {description: "restart awesome", group: "awesome"})
   awful.key({modkey, "Control"}, "q", _G.awesome.quit, {description: "quit awesome", group: "awesome"})
+  awful.key({modkey, "Shift"}, "p", exit_screen_show, {description: "show exit menu", group: "awesome"})
   awful.key({modkey}, "s", awful.tag.viewprev, {description: "view previous", group: "tag"})
   awful.key({modkey}, "w", awful.tag.viewprev, {description: "view next", group: "tag"})
   awful.key({altkey, "Control"}, "Left", awful.tag.viewprev, {description: "view previous", group: "tag"})

@@ -9,7 +9,10 @@ awful.rules = require "awful.rules"
 require "awful.autofocus"
 
 require "auto-start"
+
 require "components.titlebar"
+require "components.exit_screen"
+
 keys = require "keys"
 widgets = require "widgets"
 apps = require "apps"

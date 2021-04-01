@@ -18,4 +18,5 @@ with {}
   .black = "#444455"
   .x_black = .black .. "dd"
   .white = "#ffffff"
+  .foreground = .white
 

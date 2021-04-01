@@ -9,6 +9,7 @@ theme = require "theme.theme"
 colors = require "theme.colors"
 clock = require "widgets.clock"
 taglist = require "widgets.taglist"
+exitscreen = require "components.exit_screen"
 
 markup = lain.util.markup
 
@@ -170,7 +171,8 @@ at_screen_connect = =>
         cpuicon
         cpu.widget
         temp.widget
-        clock.mytextclock
+        clock.mytextclock 
+        exitscreen.menu_button 
         }
     }
 
@@ -191,16 +193,4 @@ at_screen_connect = =>
     }
 
 
-{
-  :mainmenu
-  :at_screen_connect
-  weather:
-    :weather
-    :weather_icon
-  cpu_usage:
-    :cpu
-    :cpuicon
-  cpu_temp:
-    :temp
-    :temp_icon
-}
+{:at_screen_connect}
