@@ -1,4 +1,5 @@
 {
+  "npm.binPath": "npm",
   "typescript.showUnused": true,
   "coc.preferences.formatOnSaveFiletypes": ["css","markdown","graphql","html","yaml"],
   "explorer.width": 25,

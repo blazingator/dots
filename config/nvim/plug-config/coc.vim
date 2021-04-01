@@ -1,3 +1,4 @@
+" From README
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -121,3 +122,28 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>s
+
+
+" User custom config==
+let g:coc_node_path = '~/.nvm/versions/node/v12.21.0/bin/node'
+
+" extensions
+" explorer
+let g:coc_global_extensions = [
+\  'coc-tsserver',
+\  'coc-json',
+\  'coc-explorer',
+\  'coc-vimlsp',
+\  'coc-rls',
+\  'coc-emmet'
+\]
+
+"autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+let g:coc_explorer_global_presets = {
+\   'floating': {
+\     'position': 'floating',
+\     'open-action-strategy': 'sourceWindow'
+\   }
+\ }
+"autocmd VimEnter * CocCommand explorer
+

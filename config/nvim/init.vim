@@ -8,28 +8,40 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Autocompletion
   Plug  'neoclide/coc.nvim', {'branch':'release'}
   Plug  'scrooloose/nerdtree'
-  "Plug  'Omnisharp/omnisharp-vim'
   Plug  'pangloss/vim-javascript'
   Plug  'leafgarland/typescript-vim'
   Plug  'peitalin/vim-jsx-typescript'
-  Plug  'styled-components/vim-styled-components', {'branch': 'master'}
-  Plug	'suan/vim-instant-markdown', { 'for': 'markdown' }
-
+  Plug  'rust-lang/rust.vim'
+  Plug  'leafo/moonscript-vim'
+  "Plug  'styled-components/vim-styled-components', {'branch': 'master'}
+  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+  
+  " Ferramentas
+  "Plug  'wvffle/vimterm'
+  Plug  'voldikss/vim-floaterm'
+  Plug  'eliba2/vim-node-inspect'
+  
   " Edição
-  Plug  'w0rp/ale'
+  "Plug  'w0rp/ale'
+  "Plug  'vim-syntastic/syntastic'
   Plug  'tpope/vim-commentary'
   Plug  'tpope/vim-sleuth'
   Plug  'jiangmiao/auto-pairs'
+  Plug  'mg979/vim-visual-multi', {'branch': 'master'}
   "Plug  'chrisbra/colorizer'
+  "Plug  'RRethy/vim-hexokinase'
   Plug  'norcalli/nvim-colorizer.lua'
-
+  Plug  'Yggdroot/indentLine'
+  
   " Estilização
+  Plug  'dylanaraps/wal.vim'
   Plug  'dracula/vim'
   Plug  'chmllr/elrodeo-vim-colorscheme'
-  Plug 'ghifarit53/tokyonight-vim'
+  Plug  'ghifarit53/tokyonight-vim'
+  Plug  'kaicataldo/material.vim', { 'branch': 'main' }
   Plug  'szorfein/sci.vim'
-  Plug	'vim-airline/vim-airline'
-  Plug	'vim-airline/vim-airline-themes' 
+  Plug  'vim-airline/vim-airline'
+  Plug  'vim-airline/vim-airline-themes' 
   Plug  'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -39,27 +51,25 @@ source $HOME/.config/nvim/plug-config/coc.vim
 " Airline
 source $HOME/.config/nvim/plug-config/airline.vim
 
-" OmniSharp
-"source $HOME/.config/nvim/plug-config/omnisharp.vim
-
 " Lua colorizer
 set termguicolors
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
-"set termguicolors!
+
 "autocmd FileType * ColorHighlight!
 
 " Colorscheme
-let g:tokyonight_transparent_background = 1
-let g:tokyonight_style = 'night'
+"let g:tokyonight_transparent_background = 1
+let g:tokyonight_style = 'storm'
 colorscheme tokyonight
 
 "Instant Markdown
-let g:instant_markdown_autostart = 0
+let g:mkdp_auto_start = 0
 
 " Keybindings
 nmap <space>e :CocCommand explorer<CR>
 "nmap <space>e :NERDTreeToggle<CR>
 nmap <space>f :CocCommand explorer --preset floating<CR>
+nnoremap <F4> :FloatermToggle --height=0.7 --wintype=floating<CR> 
 nmap <C-s> :w<CR>
 "nmap <space>w :ColorHighlight!<CR>
 map q :quit<CR>
@@ -69,10 +79,19 @@ set laststatus=2
 set confirm
 set nu!
 
+" node-inspect
+nnoremap <silent><F5> :NodeInspectStart<cr>
+nnoremap <silent><F6> :NodeInspectRun<cr>
+nnoremap <silent><F7> :NodeInspectConnect("127.0.0.1:9229")<cr>
+nnoremap <silent><F8> :NodeInspectStepInto<cr>
+nnoremap <silent><F9> :NodeInspectStepOver<cr>
+nnoremap <silent><F10> :NodeInspectToggleBreakpoint<cr>
+nnoremap <silent><F11> :NodeInspectStop<cr>
+
 " Indentação
 set tabstop=2
 set softtabstop=-1
-set shiftwidth=0
+set shiftwidth=2
 set expandtab
 
 " mouse
