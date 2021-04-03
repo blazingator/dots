@@ -143,7 +143,7 @@ menu_button = wibox.widget{
     margins: 5
     widget: wibox.container.margin
   }
-  bg: colors.grey
+  --bg: colors.grey .. "00"
   widget: wibox.container.background
 }
 
@@ -153,10 +153,10 @@ with menu_button
   )
 
   \connect_signal "mouse::enter", ->
-    .bg = colors.black
+    --.bg = colors.black
     button_icon.markup = helper.colorize_text icons.poweroff, colors.red
   \connect_signal "mouse::leave", ->
-    .bg = colors.grey
+    --.bg = colors.grey
     button_icon.markup = helper.colorize_text icons.poweroff, colors.foreground
 
 

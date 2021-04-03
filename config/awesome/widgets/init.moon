@@ -15,10 +15,8 @@ markup = lain.util.markup
 
 os.setlocale(os.getenv("LANG"))
 
-awful = require "awful"
 require "keys"
 apps = require "apps"
-
 
 taskbuttons = gears.table.join(
   awful.button({}, 1, (c) ->
@@ -171,8 +169,8 @@ at_screen_connect = =>
         cpuicon
         cpu.widget
         temp.widget
-        clock.mytextclock 
-        exitscreen.menu_button 
+        clock.mytextclock
+        exitscreen.menu_button
         }
     }
 

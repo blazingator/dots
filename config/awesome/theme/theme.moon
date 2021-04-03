@@ -27,10 +27,15 @@ with {}
   .menu_fg_focus = colors.deep_purple
   .menu_bg_normal = colors.grey
   .menu_bg_focus = colors.grey
+  .wibar_bg = colors.grey .. "AA"
+  .taglist_bg_focus = colors.grey .. "AA"
   .taglist_squares_sel = .themedir .. "/icons/square_a.png"
   .taglist_squares_unsel = .themedir .. "/icons/square_b.png"
+
   .tasklist_plain_task_name = true
   .tasklist_disable_icon = true
+  .tasklist_bg_normal = colors.grey .. "0A"
+  .tasklist_bg_focus = colors.black .. "AA"
   .useless_gap = dpi 4
   -- layouts
   .layout_tile = .themedir .. "/icons/tile.svg"
