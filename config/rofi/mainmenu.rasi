@@ -5,9 +5,9 @@ window{
   height: 60%;
   padding: 5 10 5 10;
   background-color: @bg;
-  border: 2;
+  /*border: 2;
   border-radius: 15;
-  border-color: @bd;
+  border-color: @bd; */
 }
 mainbox{
   background-color: @bg;

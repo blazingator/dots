@@ -1,8 +1,8 @@
 configuration {
   font: "Noto Sans Mono 12"; 
-  location: 1;
+  /* location: 1; 
   xoffset: 12;
-  yoffset: 35;
+  yoffset: 35; */
   show-icons: true;
   modi: "window,run,drun";
   display-run: "";
