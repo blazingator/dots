@@ -5,7 +5,7 @@ xres = require "beautiful.xresources"
 dpi = xres.apply_dpi
 
 colors = require "theme.colors"
-helper = require "helper"
+helper = require "utils.helper"
 
 
 button_size = dpi 120
