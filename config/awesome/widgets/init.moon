@@ -141,7 +141,7 @@ at_screen_connect = =>
 
   @rofimenu = with awful.widget.button
       image: theme.themedir .. "/icons/awesome_icon.png"
-    \connect_signal "button::press", -> awful.spawn apps.apps.rofi
+    \connect_signal "button::press", -> sidebar_show!
 
   with awful.wibar
       position: "top"

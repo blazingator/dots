@@ -12,6 +12,7 @@ require "auto-start"
 
 require "components.titlebar"
 require "components.exit_screen"
+require "components.sidebar"
 
 keys = require "keys"
 widgets = require "widgets"
@@ -88,6 +89,12 @@ awful.rules.rules = {
       screen: awful.screen.preferred
       buttons: clientbuttons
       titlebars_enabled: true
+  }
+  {
+    rule: { class: "scrcpy" }
+    properties:
+      --titlebars_enabled: false
+      floating: true
   }
 }
 
