@@ -7,7 +7,7 @@ theme = require "theme.theme"
 colors = require "theme.colors"
 
 clockicon = wibox.widget.textbox "  "
-mytextclock = wibox.widget.textclock markup colors.blue, clockicon.text .. "%A %d %B" .. markup colors.yellow, ">" .. markup colors.orange, "%H:%M"
+mytextclock = wibox.widget.textclock markup colors.blue, clockicon.text .. "%A %d %B" .. markup colors.yellow, "|" .. markup colors.orange, "%H:%M"
 mytextclock.font = theme.font
 
 ClockPanel = (s, offset) ->

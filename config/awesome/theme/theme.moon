@@ -7,7 +7,7 @@ colors = require "theme.colors"
 with {}
   .themedir =   "/home/vinicius/.config/awesome/theme"
   .wallpaper = .themedir .. "/wall.jpg"
-  .font = "Terminus 10"
+  .font = "Noto Sans Mono 11"
   .menu_bg_normal = "#000000"
   .menu_bg_focus = "#000000"
   .bg_normal = colors.grey
