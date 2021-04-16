@@ -15,12 +15,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug  'leafo/moonscript-vim'
   "Plug  'styled-components/vim-styled-components', {'branch': 'master'}
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-  
-  " Ferramentas
+
+  " Ferramentau
   "Plug  'wvffle/vimterm'
   Plug  'voldikss/vim-floaterm'
   Plug  'eliba2/vim-node-inspect'
-  
+
   " Edição
   "Plug  'w0rp/ale'
   "Plug  'vim-syntastic/syntastic'
@@ -32,7 +32,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   "Plug  'RRethy/vim-hexokinase'
   Plug  'norcalli/nvim-colorizer.lua'
   Plug  'Yggdroot/indentLine'
-  
+
   " Estilização
   Plug  'dylanaraps/wal.vim'
   Plug  'dracula/vim'
@@ -41,7 +41,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug  'kaicataldo/material.vim', { 'branch': 'main' }
   Plug  'szorfein/sci.vim'
   Plug  'vim-airline/vim-airline'
-  Plug  'vim-airline/vim-airline-themes' 
+  Plug  'vim-airline/vim-airline-themes'
   Plug  'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -69,7 +69,7 @@ let g:mkdp_auto_start = 0
 nmap <space>e :CocCommand explorer<CR>
 "nmap <space>e :NERDTreeToggle<CR>
 nmap <space>f :CocCommand explorer --preset floating<CR>
-nnoremap <F4> :FloatermToggle --height=0.7 --wintype=floating<CR> 
+nnoremap <F4> :FloatermToggle --height=0.7 --wintype=floating<CR>
 nmap <C-s> :w<CR>
 "nmap <space>w :ColorHighlight!<CR>
 map q :quit<CR>

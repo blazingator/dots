@@ -9,6 +9,7 @@ colors = require "theme.colors"
 default_apps = require "apps"
 calendar = require "widgets.calendar"
 volume = require "components.volume"
+fortune = require "components.fortune"
 
 mainWidget = wibox {
   visible: false
@@ -187,6 +188,7 @@ mainWidget\setup {
       dirsContainer
       nil
       volume.volume_bar
+      fortune.fortune
       spacing: dpi 35
       layout: wibox.layout.fixed.vertical
     }
