@@ -66,11 +66,11 @@ weather = lain.widget.weather({
 
 -- Alsa volume
 volicon = wibox.widget.textbox " "
-volume = lain.widget.alsa {
+volume = lain.widget.pulse {
   settings: ->
-    volume_now.level = volume_now.level .. "M" if volume_now.status == "off"
+    volume_now.left = volume_now.left.. "M" if volume_now.status == "off"
 
-    widget\set_markup markup.fontfg theme.font, colors.indigo, volicon.text .. volume_now.level .. "%"
+    widget\set_markup markup.fontfg theme.font, colors.indigo, volicon.text .. volume_now.left .. "%"
 }
 
 -- Net
@@ -139,9 +139,13 @@ at_screen_connect = =>
     buttons: taskbuttons
   }
 
-  @rofimenu = with awful.widget.button
+  @mysidebar = with awful.widget.button
       image: theme.themedir .. "/icons/awesome_icon.png"
     \connect_signal "button::press", -> sidebar_show!
+
+  @mytray = wibox.widget.systray {
+    opacity: 0.40
+  }
 
   with awful.wibar
       position: "top"
@@ -151,14 +155,14 @@ at_screen_connect = =>
       layout: wibox.layout.align.horizontal
       {
         layout: wibox.layout.fixed.horizontal
-        @rofimenu
+        @mysidebar
         @mytaglist
       },
       --@mytasklist,
       nil,
       {
         layout: wibox.layout.fixed.horizontal
-        wibox.widget.systray!
+        @mytray
         neticons.netdown
         netdowninfo
         neticons.netup
