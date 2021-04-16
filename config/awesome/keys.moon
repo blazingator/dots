@@ -3,6 +3,8 @@ gears = require "gears"
 
 hotkeys_popup = require "awful.hotkeys_popup"
 
+helper = require "utils.helper"
+
 export modkey = "Mod4"
 export altkey = "Mod1"
 
@@ -82,6 +84,12 @@ export globalkeys = gears.table.join(
       c\raise!, {description:'restore minimized', group: 'client'})
   awful.key({'Control', 'Shift'}, 'Escape', -> awful.spawn.with_shell 'alacritty -e bpytop',
     {description: 'Open system monitor', group: 'launcher'})
+  awful.key({altkey}, 'F2', ->
+    helper.volume_control 2,
+    {description: 'raise volume', group: 'volume'})
+  awful.key({altkey}, 'F3', ->
+    helper.volume_control -2,
+    {description: 'raise volume', group: 'volume'})
 )
 
 for i = 1, 9

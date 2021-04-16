@@ -8,6 +8,7 @@ helper = require "utils.helper"
 colors = require "theme.colors"
 default_apps = require "apps"
 calendar = require "widgets.calendar"
+volume = require "components.volume"
 
 mainWidget = wibox {
   visible: false
@@ -182,7 +183,13 @@ mainWidget\connect_signal "property::visible", ->
 mainWidget\setup {
   {
     calendar.cal_widget
-    dirsContainer
+    {
+      dirsContainer
+      nil
+      volume.volume_bar
+      spacing: dpi 35
+      layout: wibox.layout.fixed.vertical
+    }
     {
       nil
       {

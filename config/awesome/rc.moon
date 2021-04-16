@@ -10,6 +10,8 @@ require "awful.autofocus"
 
 require "auto-start"
 
+require "evil"
+
 require "components.titlebar"
 require "components.exit_screen"
 require "components.sidebar"
