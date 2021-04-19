@@ -181,9 +181,15 @@ mainWidget\connect_signal "property::visible", ->
   if mainWidget.visible
     calendar.cal_widget.date = os.date('*t')
 
+
+-- TODO melhorar o layout da sidebar
 mainWidget\setup {
   {
-    calendar.cal_widget
+    {
+      calendar.cal_widget
+      forced_height: 280
+      widget: wibox.container.background
+    }
     {
       dirsContainer
       nil
@@ -204,7 +210,7 @@ mainWidget\setup {
       expand: 'none'
       layout: wibox.layout.align.horizontal
     }
-    expand: "none"
+    --expand: "none"
     layout: wibox.layout.align.vertical
   }
   margins: 10
