@@ -1,7 +1,7 @@
 # My personal dotfiles
 
 ## My desktop
-- WM: [awesomeWM](awesomewm.org/) 
+- WM: [awesomeWM](http://awesomewm.org/)
 - Terminal: [alacritty](https://github.com/alacritty/alacritty)
 - Shell: [zsh](zsh.sourceforge.net/) with [oh my zsh](https://ohmyz.sh)
 - Compositor: [picom](https://github.com/ibhagwan/picom)
