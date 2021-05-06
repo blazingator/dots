@@ -123,9 +123,8 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>s
 
-
 " User custom config==
-let g:coc_node_path = '~/.nvm/versions/node/v12.21.0/bin/node'
+let g:coc_node_path = $HOME.'/.nvm/versions/node/v12.21.0/bin/node'
 
 " extensions
 " explorer
