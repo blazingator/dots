@@ -13,6 +13,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug  'rust-lang/rust.vim'
   Plug  'leafo/moonscript-vim'
   Plug  'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+  Plug  'hrsh7th/vim-vsnip'
+  Plug  'rafamadriz/friendly-snippets'
 
   " Ferramentas
   Plug  'voldikss/vim-floaterm'
@@ -50,6 +52,8 @@ source $HOME/.config/nvim/plug-config/airline.vim
 set termguicolors
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 
+" vsinp
+source $HOME/.config/nvim/plug-config/vsnip.vim
 "autocmd FileType * ColorHighlight!
 
 " Colorscheme
