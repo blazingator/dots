@@ -1,4 +1,4 @@
-@import "colorschemes/layanlight.rasi"
+@import "colorschemes/layandark.rasi"
 
 * {
   x0: #0a6cf5;
