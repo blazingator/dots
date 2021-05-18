@@ -24,7 +24,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   "Plug  'w0rp/ale'
   "Plug  'vim-syntastic/syntastic'
   Plug  'tpope/vim-commentary'
-  Plug  'tpope/vim-sleuth'
+  "Plug  'tpope/vim-sleuth'
   Plug  'jiangmiao/auto-pairs'
   Plug  'mg979/vim-visual-multi', {'branch': 'master'}
   "Plug  'chrisbra/colorizer'
@@ -70,6 +70,7 @@ nmap <space>f :CocCommand explorer --preset floating<CR>
 nnoremap <F4> :FloatermToggle --height=0.7 --wintype=floating<CR>
 map <C-s> :w<CR>
 "nmap <space>w :ColorHighlight!<CR>
+nnoremap <F7> :retab<CR>
 nmap q :quit<CR>
 map <C-q> :quit!<CR>
 
@@ -88,8 +89,8 @@ nnoremap <silent><F11> :NodeInspectStop<cr>
 
 " Indentação
 set tabstop=2
-set softtabstop=-1
 set shiftwidth=2
+set softtabstop=-1
 set expandtab
 
 " mouse
