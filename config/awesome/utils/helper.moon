@@ -5,6 +5,14 @@ export rrect = (radius) ->
   return (cr, width, height)->
     shape.rounded_rect(cr,width,height, radius)
 
+partial_rrect = (size, direction) ->
+  if direction == 'ltr'
+    return (cr, width, height) ->
+      shape.partially_rounded_rect cr, width, height, true, false, true, false, size
+  else
+    return (cr, width, height) ->
+      shape.partially_rounded_rect cr, width, height, size
+
 colorize_text = (text,color) ->
   return "<span foreground='"..color.."'>"..text.."</span>"
 
@@ -26,4 +34,4 @@ set_volume = (level) ->
   spawn.with_shell cmd
 
 
-{:colorize_text, :rrect, :volume_control, :set_volume}
+{:colorize_text, :partial_rrect, :rrect, :volume_control, :set_volume}

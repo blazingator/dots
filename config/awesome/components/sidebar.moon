@@ -14,9 +14,9 @@ fortune = require "components.fortune"
 mainWidget = wibox {
   visible: false
   ontop: true
-  width: 400
+  width: 460
   type: "dock"
-  bg: colors.black
+  bg: colors.black .. "99"
 }
 awful.placement.maximize_vertically mainWidget
 
@@ -186,9 +186,13 @@ mainWidget\connect_signal "property::visible", ->
 mainWidget\setup {
   {
     {
-      calendar.cal_widget
-      forced_height: 280
-      widget: wibox.container.background
+      {
+        calendar.cal_widget
+        forced_height: 300
+        widget: wibox.container.background
+      }
+      bottom: dpi 5
+      widget: wibox.container.margin
     }
     {
       dirsContainer
