@@ -1,19 +1,14 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 export TERMINAL=$TERM
 export PEN=/run/media/vinicius/Cruzerforce
 export DADOS=/run/media/vinicius/dados
-export STEAMAPPS=$DADOS/steamlinux/steamapps/common
-#export DOTNET_CLI_TELEMETRY_OPTOUT=1
-#export DOTNET_ROOT=/run/media/vinicius/dados/dotnet
+#export STEAMAPPS=$DADOS/steamlinux/steamapps/common
 # export ANDROID_HOME=/run/media/vinicius/dados/Android/linux/Sdk
-export JAVA_HOME=$HOME/.openjdk/jre8
 export STEAM_COMPAT_DATA_PATH=~/.proton
-export PROTONPATH="$STEAMAPPS/Proton 5.0"
+if [[ ! -v $STEAM_COMPAT_CLIENT_INSTALL_PATH ]]; then
+  export STEAM_COMPAT_CLIENT_INSTALL_PATH=~/.local/share/Steam
+fi
+export PROTONPATH="$HOME/.local/SteamLibrary/steamapps/common/Proton 5.0"
 export WINEPREFIX=$PROTONPATH/dist/share/default_pfx
-#export PATH=$PATH:$DOTNET_ROOT:$HOME/.dotnet/tools
-export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$PROTONPATH:$PROTONPATH/dist/bin
 export PATH=$PATH:$HOME/.local/bin
 
@@ -22,6 +17,14 @@ stty -ixon
 # alias sdkmanager='sdkmanager --sdk_root=${ANDROID_HOME}'
 alias sqlite='sqlite3'
 alias noblank='xset s off; xset -dpms; xset s noblank'
+alias ytdl='youtube-dl'
+
+function reload_gtk_theme() {
+  theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
+  gsettings set org.gnome.desktop.interface gtk-theme ''
+  sleep 1
+  gsettings set org.gnome.desktop.interface gtk-theme $theme
+}
 
 # nvm
 source /usr/share/nvm/init-nvm.sh
@@ -205,9 +208,5 @@ zinit light olivierverdier/zsh-git-prompt
 zinit light mafredri/zsh-async
 
 ### End of Zinit's installer chunk
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 
 alias grep='rg'
