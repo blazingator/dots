@@ -164,6 +164,9 @@ config = build_button configIcon, "Configurações", colors.blue, colors.light_b
 restartIcon = ""
 restart = build_button restartIcon, "Reiniciar", colors.yellow, colors.light_yellow
 
+wallpaperIcon = ""
+wallpapers = build_button wallpaperIcon, "Wallpapers", colors.red, colors.pink
+
 --events
 mainWidget\buttons gears.table.join(
   awful.button {}, 3, -> sidebar_hide!
@@ -176,6 +179,9 @@ config\connect_signal "button::release", ->
   sidebar_hide!
 restart\connect_signal "button::release", ->
   awesome.restart!
+wallpapers\connect_signal "button::release", ->
+  sidebar_hide!
+  show_container!
 
 mainWidget\connect_signal "property::visible", ->
   if mainWidget.visible
@@ -208,6 +214,7 @@ mainWidget\setup {
         search
         config
         restart
+        wallpapers
         spacing: dpi 10
         layout: wibox.layout.fixed.horizontal
       }

@@ -15,6 +15,7 @@ require "evil"
 require "components.titlebar"
 require "components.exit_screen"
 require "components.sidebar"
+require "components.wallpapers"
 
 keys = require "keys"
 widgets = require "widgets"
