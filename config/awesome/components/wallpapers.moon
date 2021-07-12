@@ -15,9 +15,8 @@ Split = (s, delimiter) ->
     
   result
 
--- Wallpaper tool
+-- Wallpaper tool --- sets the wallpaper based on symbolic link
 wallpapers_dir = '/home/vinicius/Imagens/awesome-wallpapers/'
-cmd = "ls "..wallpapers_dir
 wallpapers_images = {
   "1.png"
   "2.png"
@@ -26,34 +25,34 @@ wallpapers_images = {
   "5.png"
   "6.png"
   "7.png"
-  "sunrise-landscape.jpg"
-  "the-neon-shallows.png"
-  "two-in-one-boat.jpg"
-  "ugly-dude-black.png"
-  "ugly-dude-dark.png"
-  "vaporwave.png"
+  "8.jpg"
+  "9.png"
+  "10.jpg"
+  "11.png"
+  "12.png"
+  "13.png"
 }
--- 
--- awful.spawn.easy_async(cmd, (stdout) ->
---   wallpapers_images = wallpapers_dir .. Split stdout, '\n'
--- )
+for i=1,13
+  wallpapers_images[i] = wallpapers_dir..wallpapers_images[i]
 
 create_img_container = (img) ->
   container = wibox.widget {
     image: img
-    forced_height: dpi 150
+    forced_height: dpi 100
     forced_width: dpi 200
     widget: wibox.widget.imagebox
   }
 
-  return container
+  helper.add_hover_cursor container, "hand1"
+
+  container\connect_signal "button::release", () ->
+    helper.set_wallpaper_symlink img
+
+  container
 
 img_containers = {}
 for i=1,13
-  table.insert img_containers, create_img_container(wallpapers_dir..wallpapers_images[i])
-
-dummy_textclock = wibox.widget.textclock("%M")
-dummy_textclock.visible = false
+  table.insert img_containers, create_img_container(wallpapers_images[i])
 
 wallpapers_list = wibox.widget {
   {
@@ -71,16 +70,17 @@ wallpapers_list = wibox.widget {
     img_containers[12]
     img_containers[13]
     spacing: 5
-    expand: true
+    homogeneous: true
     forced_num_cols: 4
     layout: wibox.layout.grid
   }
   margins: dpi 10
-  layout: wibox.container.margin
+  forced_width: dpi 900
+  widget: wibox.container.margin
 }
 
 current_wallpaper = wibox.widget {
-  {
+  -- {
     {
       text: "Papel de parede atual"
       font: "sans bold 12"
@@ -96,9 +96,9 @@ current_wallpaper = wibox.widget {
     }
     spacing: dpi 5
     layout: wibox.layout.fixed.vertical
-  }
-  spacing: dpi 10
-  layout: wibox.layout.fixed.vertical
+  -- }
+  -- spacing: dpi 10
+  -- layout: wibox.layout.fixed.vertical
 }
 
 wrapper = wibox {
@@ -131,6 +131,7 @@ wrapper\setup{
     --   expand: 'none'
     --   layout: wibox.layout.align.vertical
     -- }
+    nil
     wallpapers_list 
     
     expand: 'none'

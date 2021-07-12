@@ -1,2 +1,3 @@
 config/nvim/autoload/*
 config/awesome/rc.lua.new
+config/awesome/theme/wall.*
